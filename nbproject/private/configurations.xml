@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name=".settings">
+      </df>
+      <df name="Debug">
+        <df name="Drivers">
+          <df name="CMSIS">
+            <df name="Device">
+              <df name="ST">
+                <df name="STM32L1xx">
+                  <df name="Source">
+                    <df name="Templates">
+                      <df name="gcc">
+                      </df>
+                    </df>
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="STM32L1xx_HAL_Driver">
+            <df name="Src">
+            </df>
+          </df>
+        </df>
+        <df name="Src">
+        </df>
+      </df>
+      <df name="Drivers">
+        <df name="CMSIS">
+          <df name="Device">
+            <df name="ST">
+              <df name="STM32L1xx">
+                <df name="Include">
+                  <in>stm32l100xb.h</in>
+                  <in>stm32l100xba.h</in>
+                  <in>stm32l100xc.h</in>
+                  <in>stm32l151xb.h</in>
+                  <in>stm32l151xba.h</in>
+                  <in>stm32l151xc.h</in>
+                  <in>stm32l151xca.h</in>
+                  <in>stm32l151xd.h</in>
+                  <in>stm32l151xdx.h</in>
+                  <in>stm32l151xe.h</in>
+                  <in>stm32l152xb.h</in>
+                  <in>stm32l152xba.h</in>
+                  <in>stm32l152xc.h</in>
+                  <in>stm32l152xca.h</in>
+                  <in>stm32l152xd.h</in>
+                  <in>stm32l152xdx.h</in>
+                  <in>stm32l152xe.h</in>
+                  <in>stm32l162xc.h</in>
+                  <in>stm32l162xca.h</in>
+                  <in>stm32l162xd.h</in>
+                  <in>stm32l162xdx.h</in>
+                  <in>stm32l162xe.h</in>
+                  <in>stm32l1xx.h</in>
+                  <in>system_stm32l1xx.h</in>
+                </df>
+                <df name="Source">
+                  <df name="Templates">
+                    <df name="gcc">
+                      <in>startup_stm32l152xc.s</in>
+                    </df>
+                    <in>system_stm32l1xx.c</in>
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="Include">
+            <in>arm_common_tables.h</in>
+            <in>arm_const_structs.h</in>
+            <in>arm_math.h</in>
+            <in>cmsis_armcc.h</in>
+            <in>cmsis_armcc_V6.h</in>
+            <in>cmsis_gcc.h</in>
+            <in>core_cm0.h</in>
+            <in>core_cm0plus.h</in>
+            <in>core_cm3.h</in>
+            <in>core_cm4.h</in>
+            <in>core_cm7.h</in>
+            <in>core_cmFunc.h</in>
+            <in>core_cmInstr.h</in>
+            <in>core_cmSimd.h</in>
+            <in>core_sc000.h</in>
+            <in>core_sc300.h</in>
+          </df>
+        </df>
+        <df name="STM32L1xx_HAL_Driver">
+          <df name="Inc">
+            <df name="Legacy">
+              <in>stm32_hal_legacy.h</in>
+            </df>
+            <in>stm32l1xx_hal.h</in>
+            <in>stm32l1xx_hal_adc.h</in>
+            <in>stm32l1xx_hal_adc_ex.h</in>
+            <in>stm32l1xx_hal_cortex.h</in>
+            <in>stm32l1xx_hal_def.h</in>
+            <in>stm32l1xx_hal_dma.h</in>
+            <in>stm32l1xx_hal_flash.h</in>
+            <in>stm32l1xx_hal_flash_ex.h</in>
+            <in>stm32l1xx_hal_flash_ramfunc.h</in>
+            <in>stm32l1xx_hal_gpio.h</in>
+            <in>stm32l1xx_hal_gpio_ex.h</in>
+            <in>stm32l1xx_hal_lcd.h</in>
+            <in>stm32l1xx_hal_pwr.h</in>
+            <in>stm32l1xx_hal_pwr_ex.h</in>
+            <in>stm32l1xx_hal_rcc.h</in>
+            <in>stm32l1xx_hal_rcc_ex.h</in>
+            <in>stm32l1xx_hal_tim.h</in>
+            <in>stm32l1xx_hal_tim_ex.h</in>
+          </df>
+          <df name="Src">
+            <in>stm32l1xx_hal.c</in>
+            <in>stm32l1xx_hal_adc.c</in>
+            <in>stm32l1xx_hal_adc_ex.c</in>
+            <in>stm32l1xx_hal_cortex.c</in>
+            <in>stm32l1xx_hal_dma.c</in>
+            <in>stm32l1xx_hal_flash.c</in>
+            <in>stm32l1xx_hal_flash_ex.c</in>
+            <in>stm32l1xx_hal_flash_ramfunc.c</in>
+            <in>stm32l1xx_hal_gpio.c</in>
+            <in>stm32l1xx_hal_lcd.c</in>
+            <in>stm32l1xx_hal_pwr.c</in>
+            <in>stm32l1xx_hal_pwr_ex.c</in>
+            <in>stm32l1xx_hal_rcc.c</in>
+            <in>stm32l1xx_hal_rcc_ex.c</in>
+            <in>stm32l1xx_hal_tim.c</in>
+            <in>stm32l1xx_hal_tim_ex.c</in>
+          </df>
+        </df>
+      </df>
+      <df name="Inc">
+        <in>app1.h</in>
+        <in>discover_board.h</in>
+        <in>discover_functions.h</in>
+        <in>icc_measure.h</in>
+        <in>main.h</in>
+        <in>mxconstants.h</in>
+        <in>stm32l1xx_hal_conf.h</in>
+        <in>stm32l1xx_it.h</in>
+        <in>stm32l_discovery_lcd.h</in>
+        <in>tsl.h</in>
+        <in>tsl_acq.h</in>
+        <in>tsl_acq_stm32f0xx.h</in>
+        <in>tsl_acq_stm32f3xx.h</in>
+        <in>tsl_acq_stm32l1xx_hw.h</in>
+        <in>tsl_acq_stm32l1xx_sw.h</in>
+        <in>tsl_acq_stm8l_hw.h</in>
+        <in>tsl_acq_stm8l_sw.h</in>
+        <in>tsl_acq_stm8tl5x.h</in>
+        <in>tsl_check_config.h</in>
+        <in>tsl_check_config_stm32f0xx.h</in>
+        <in>tsl_check_config_stm32f3xx.h</in>
+        <in>tsl_check_config_stm32l1xx.h</in>
+        <in>tsl_check_config_stm8l.h</in>
+        <in>tsl_check_config_stm8tl5x.h</in>
+        <in>tsl_conf_stm32l1xx.h</in>
+        <in>tsl_dxs.h</in>
+        <in>tsl_ecs.h</in>
+        <in>tsl_filter.h</in>
+        <in>tsl_globals.h</in>
+        <in>tsl_linrot.h</in>
+        <in>tsl_object.h</in>
+        <in>tsl_time.h</in>
+        <in>tsl_time_stm32f0xx.h</in>
+        <in>tsl_time_stm32f3xx.h</in>
+        <in>tsl_time_stm32l1xx.h</in>
+        <in>tsl_time_stm8l.h</in>
+        <in>tsl_time_stm8tl5x.h</in>
+        <in>tsl_touchkey.h</in>
+        <in>tsl_types.h</in>
+        <in>tsl_user.h</in>
+      </df>
+      <df name="Src">
+        <in>app1.c</in>
+        <in>main.c</in>
+        <in>stm32l1xx_hal_msp.c</in>
+        <in>stm32l1xx_it.c</in>
+        <in>stm32l_discovery_lcd.c</in>
+        <in>tsl.c</in>
+        <in>tsl_acq.c</in>
+        <in>tsl_acq_stm32f0xx.c</in>
+        <in>tsl_acq_stm32f3xx.c</in>
+        <in>tsl_acq_stm32l1xx_hw.c</in>
+        <in>tsl_acq_stm32l1xx_sw.c</in>
+        <in>tsl_acq_stm8l_hw.c</in>
+        <in>tsl_acq_stm8l_sw.c</in>
+        <in>tsl_acq_stm8tl5x.c</in>
+        <in>tsl_dxs.c</in>
+        <in>tsl_ecs.c</in>
+        <in>tsl_filter.c</in>
+        <in>tsl_globals.c</in>
+        <in>tsl_linrot.c</in>
+        <in>tsl_object.c</in>
+        <in>tsl_time.c</in>
+        <in>tsl_time_stm32f0xx.c</in>
+        <in>tsl_time_stm32f3xx.c</in>
+        <in>tsl_time_stm32l1xx.c</in>
+        <in>tsl_time_stm8l.c</in>
+        <in>tsl_time_stm8tl5x.c</in>
+        <in>tsl_touchkey.c</in>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>
