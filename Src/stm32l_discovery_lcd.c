@@ -87,43 +87,40 @@ static void LCD_Conv_Char_Seg(uint8_t* c, bool point, bool column, uint8_t* digi
  * @retval None
  */
 void LCD_GLASS_Init(void) {
-    LCD_InitTypeDef LCD_InitStruct;
+    
+    LCD_HandleTypeDef lcd_handleStruct;
 
-    LCD_InitStruct.Prescaler = LCD_PRESCALER_1;
-    LCD_InitStruct.Divider = LCD_DIVIDER_31;
-    LCD_InitStruct.Duty = LCD_DUTY_1_4;
-    LCD_InitStruct.Bias = LCD_BIAS_1_3;
-    LCD_InitStruct.VoltageSource = LCD_VOLTAGESOURCE_INTERNAL;
-    LCD_InitStruct.MuxSegment = LCD_MUXSEGMENT_ENABLE;
-    LCD_InitStruct.Contrast = LCD_CONTRASTLEVEL_4;
-    LCD_InitStruct.DeadTime = LCD_DEADTIME_0;
+    lcd_handleStruct.Init.Prescaler = LCD_PRESCALER_1;
+    lcd_handleStruct.Init.Divider = LCD_DIVIDER_31;
+    lcd_handleStruct.Init.Duty = LCD_DUTY_1_4;
+    lcd_handleStruct.Init.Bias = LCD_BIAS_1_3;
+    lcd_handleStruct.Init.VoltageSource = LCD_VOLTAGESOURCE_INTERNAL;
+    lcd_handleStruct.Init.MuxSegment = LCD_MUXSEGMENT_ENABLE;
+    lcd_handleStruct.Init.Contrast = LCD_CONTRASTLEVEL_4;/* To set contrast to mean value */
+    lcd_handleStruct.Init.DeadTime = LCD_DEADTIME_0;
+    lcd_handleStruct.Init.PulseOnDuration = LCD_PULSEONDURATION_4;
 
-
+    
+    
     /* Initialize the LCD */
-    HAL_LCD_Init(&LCD_InitStruct);
-
-    //HAL_LCD_MuxSegmentCmd(ENABLE);
-
-    /* To set contrast to mean value */
-    // HAL_LCD_ContrastConfig(LCD_Contrast_Level_4);
-
-    //LCD_DeadTimeConfig(LCD_DeadTime_0);
-    LCD_PulseOnDurationConfig(LCD_PulseOnDuration_4);
+    HAL_LCD_Init(&lcd_handleStruct);
 
     /* Wait Until the LCD FCR register is synchronized */
-    LCD_WaitForSynchro();
+    
+    LCD_WaitForSynchro(&lcd_handleStruct);
 
     /* Enable LCD peripheral */
-    LCD_Cmd(ENABLE);
+    __HAL_LCD_ENABLE(&lcd_handleStruct);
 
     /* Wait Until the LCD is enabled */
-    while (LCD_GetFlagStatus(LCD_FLAG_ENS) == RESET) {
+    //HAL_LCD_GetState()
+    while (__HAL_LCD_GET_FLAG(&lcd_handleStruct, LCD_FLAG_ENS) == RESET) {
     }
     /*!< Wait Until the LCD Booster is ready */
-    while (LCD_GetFlagStatus(LCD_FLAG_RDY) == RESET) {
+    while (__HAL_LCD_GET_FLAG(&lcd_handleStruct, LCD_FLAG_RDY) == RESET) {
     }
 
-    LCD_BlinkConfig(LCD_BlinkMode_Off, LCD_BlinkFrequency_Div32);
+    __HAL_LCD_BLINK_CONFIG(&lcd_handleStruct, LCD_BLINKMODE_OFF, LCD_BLINKFREQUENCY_DIV32);
     LCD_GLASS_Clear();
 }
 
