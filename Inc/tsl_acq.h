@@ -30,8 +30,6 @@
 #define __TSL_ACQ_H
 
 /* Includes ------------------------------------------------------------------*/
-/*manny*/
-//#define STM32L1XX_MDP
 // Check the device selection.
 // It must be defined in the toolchain compiler preprocessor.
 // The same name as in the Standard Peripheral Library is used.

@@ -92,22 +92,25 @@ void LCD_GLASS_Init(void)
 {
   LCD_InitTypeDef LCD_InitStruct;
   
-  LCD_InitStruct.LCD_Prescaler = LCD_Prescaler_1;
-  LCD_InitStruct.LCD_Divider = LCD_Divider_31;
-  LCD_InitStruct.LCD_Duty = LCD_Duty_1_4;
-  LCD_InitStruct.LCD_Bias = LCD_Bias_1_3;
-  LCD_InitStruct.LCD_VoltageSource = LCD_VoltageSource_Internal;
+  LCD_InitStruct.Prescaler = LCD_PRESCALER_1;
+  LCD_InitStruct.Divider = LCD_DIVIDER_31;
+  LCD_InitStruct.Duty = LCD_DUTY_1_4;
+  LCD_InitStruct.Bias = LCD_BIAS_1_3;
+  LCD_InitStruct.VoltageSource = LCD_VOLTAGESOURCE_INTERNAL;
+  LCD_InitStruct.MuxSegment = LCD_MUXSEGMENT_ENABLE;
+  LCD_InitStruct.Contrast = LCD_CONTRASTLEVEL_4;
+  LCD_InitStruct.DeadTime = LCD_DEADTIME_0;
 
  
   /* Initialize the LCD */
-  LCD_Init(&LCD_InitStruct);
+  HAL_LCD_Init(&LCD_InitStruct);
   
-  LCD_MuxSegmentCmd(ENABLE);
+  //HAL_LCD_MuxSegmentCmd(ENABLE);
   
   /* To set contrast to mean value */
-  LCD_ContrastConfig(LCD_Contrast_Level_4);
+ // HAL_LCD_ContrastConfig(LCD_Contrast_Level_4);
   
-  LCD_DeadTimeConfig(LCD_DeadTime_0);
+  //LCD_DeadTimeConfig(LCD_DeadTime_0);
   LCD_PulseOnDurationConfig(LCD_PulseOnDuration_4);
 
   /* Wait Until the LCD FCR register is synchronized */
