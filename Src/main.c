@@ -91,9 +91,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_ALLSEG_ALLCOM,LCD_BLINKFREQUENCY_DIV512);
+  LCD_GLASS_DisplayString(&hlcd, "88888");
+  __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_OFF, LCD_BLINKFREQUENCY_DIV32);
   while (1)
   {
-	  int v = app1_main();
+  HAL_Delay(2000);
+  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
+  HAL_Delay(2000);
+  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 1);
+	  
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */

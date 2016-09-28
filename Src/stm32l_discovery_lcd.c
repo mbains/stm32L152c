@@ -153,17 +153,17 @@ void LCD_contrast(LCD_HandleTypeDef * handle) {
  * @param  None
  * @retval None
  */
-//void LCD_bar() {
-//
-//    LCD->RAM[LCD_RAMRegister_4] &= 0xffff5fff;
-//    LCD->RAM[LCD_RAMRegister_6] &= 0xffff5fff;
-//    /* bar1 bar3 */
-//    LCD->RAM[LCD_RAMRegister_4] |= (uint32_t) (t_bar[0] << 12);
-//
-//    /*bar0 bar2 */
-//    LCD->RAM[LCD_RAMRegister_6] |= (uint32_t) (t_bar[1] << 12);
-//
-//}
+void LCD_bar() {
+
+    LCD->RAM[LCD_RAM_REGISTER4] &= 0xffff5fff;
+    LCD->RAM[LCD_RAM_REGISTER6] &= 0xffff5fff;
+    /* bar1 bar3 */
+    LCD->RAM[LCD_RAM_REGISTER4] |= (uint32_t) (t_bar[0] << 12);
+
+    /*bar0 bar2 */
+    LCD->RAM[LCD_RAM_REGISTER6] |= (uint32_t) (t_bar[1] << 12);
+
+}
 
 /**
  * @brief  Converts an ascii char to the a LCD digit.
