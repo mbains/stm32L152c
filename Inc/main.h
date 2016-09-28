@@ -30,8 +30,8 @@
 #include <stdio.h>
 
 /* Touch sensing driver headers */
-#include "tsl.h"
-#include "tsl_user.h"
+//#include "tsl.h"
+//#include "tsl_user.h"
 
 /* discovery board and specific drivers headers*/
 #include "discover_board.h"
