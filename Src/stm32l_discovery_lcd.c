@@ -21,6 +21,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l_discovery_lcd.h"
+#include "stm32l152xc.h"
 #include "discover_board.h"
 #include "stm32l1xx_hal_lcd.h"
 #include "main.h"

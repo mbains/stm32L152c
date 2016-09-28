@@ -43,8 +43,6 @@
         <in>stm32l1xx_hal_msp.c</in>
         <in>stm32l1xx_it.c</in>
         <in>stm32l_discovery_lcd.c</in>
-        <in>tsl.c</in>
-        <in>tsl_acq.c</in>
       </df>
     </df>
     <logicalFolder name="ExternalFiles"
@@ -742,38 +740,6 @@
             <pElem>Inc</pElem>
             <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/lib/gcc/arm-none-eabi/5.2.1/include</pElem>
             <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include</pElem>
-            <pElem>Drivers/STM32L1xx_HAL_Driver/Inc/Legacy</pElem>
-            <pElem>Debug</pElem>
-          </incDir>
-        </cTool>
-      </item>
-      <item path="Src/tsl.c" ex="false" tool="0" flavor2="3">
-        <cTool flags="0">
-          <incDir>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/machine</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/sys</pElem>
-            <pElem>Inc</pElem>
-            <pElem>Drivers/CMSIS/Include</pElem>
-            <pElem>Drivers/CMSIS/Device/ST/STM32L1xx/Include</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/lib/gcc/arm-none-eabi/5.2.1/include</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include</pElem>
-            <pElem>Drivers/STM32L1xx_HAL_Driver/Inc</pElem>
-            <pElem>Drivers/STM32L1xx_HAL_Driver/Inc/Legacy</pElem>
-            <pElem>Debug</pElem>
-          </incDir>
-        </cTool>
-      </item>
-      <item path="Src/tsl_acq.c" ex="false" tool="0" flavor2="3">
-        <cTool flags="0">
-          <incDir>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/machine</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/sys</pElem>
-            <pElem>Inc</pElem>
-            <pElem>Drivers/CMSIS/Include</pElem>
-            <pElem>Drivers/CMSIS/Device/ST/STM32L1xx/Include</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/lib/gcc/arm-none-eabi/5.2.1/include</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include</pElem>
-            <pElem>Drivers/STM32L1xx_HAL_Driver/Inc</pElem>
             <pElem>Drivers/STM32L1xx_HAL_Driver/Inc/Legacy</pElem>
             <pElem>Debug</pElem>
           </incDir>
