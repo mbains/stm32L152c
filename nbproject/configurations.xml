@@ -39,6 +39,7 @@
       </df>
       <df name="Src">
         <in>app1.c</in>
+        <in>discover_functions.c</in>
         <in>main.c</in>
         <in>stm32l1xx_hal_msp.c</in>
         <in>stm32l1xx_it.c</in>
@@ -660,6 +661,8 @@
             <Elem>__weak=__attribute__((weak))</Elem>
           </preprocessorList>
         </cTool>
+      </item>
+      <item path="Src/discover_functions.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="Src/main.c" ex="false" tool="0" flavor2="2">
         <cTool flags="0">

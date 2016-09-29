@@ -35,6 +35,8 @@
 
 /* USER CODE BEGIN Includes */
 #include <app1.h>
+#include "stm32l_discovery_lcd.h"
+#include "discover_functions.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -92,14 +94,31 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_ALLSEG_ALLCOM,LCD_BLINKFREQUENCY_DIV512);
-  LCD_GLASS_DisplayString(&hlcd, "88888");
+//  LCD_GLASS_DisplayString(&hlcd, "88888");
   __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_OFF, LCD_BLINKFREQUENCY_DIV32);
+  static uint32_t percent_value = 0;
   while (1)
   {
-  HAL_Delay(2000);
+  HAL_Delay(20);
   HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
-  HAL_Delay(2000);
+  HAL_Delay(20);
   HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 1);
+  
+  uint16_t Message[6];  
+  Message[0] = ' ';
+  Message[1] = ' ';
+  Message[2] = ' ';
+
+  /* get Slider position and convert it in percent*/
+  percent_value++;
+  /*Convert percent value in char and store it in message*/    
+  convert_into_char(percent_value, Message);
+  /*Add "%" in message*/ 
+//  Message[3] = '�' ;
+//  Message[4] = '/' ;
+//  Message[5] = '%' ;
+  /*Display message*/
+  LCD_GLASS_DisplayStrDeci(&hlcd, Message);  
 	  
   /* USER CODE END WHILE */
 
