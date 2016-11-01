@@ -63,6 +63,15 @@ static void MX_TS_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+void _exit(int a){
+	while(1){};
+}
+
+
+caddr_t _sbrk(int nbytes) {
+   //TODO: implement system call
+   return NULL;
+}
 
 /* USER CODE END 0 */
 
