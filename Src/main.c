@@ -68,11 +68,26 @@ void _exit(int a){
 }
 
 
-caddr_t _sbrk(int nbytes) {
-   //TODO: implement system call
-   return NULL;
-}
+#include <errno.h>
+#include <sys/types.h>
+extern caddr_t _end, _stackend;
 
+caddr_t _sbrk(int nbytes) {
+    static caddr_t heap_ptr = NULL;
+    caddr_t base;
+    if (heap_ptr == NULL) {
+        heap_ptr = (caddr_t) & _end;
+    }
+    if ((caddr_t) & _stackend > heap_ptr + nbytes) {
+        base = heap_ptr;
+        heap_ptr += nbytes;
+        return (base);
+    } else {
+        errno = ENOMEM;
+        return ((caddr_t) - 1);
+    }
+
+}
 /* USER CODE END 0 */
 
 int main(void)
