@@ -34,6 +34,7 @@
             <in>stm32l1xx_hal_rcc_ex.c</in>
             <in>stm32l1xx_hal_tim.c</in>
             <in>stm32l1xx_hal_tim_ex.c</in>
+            <in>stm32l1xx_hal_uart.c</in>
           </df>
         </df>
         <in>Foo.cpp</in>
@@ -421,6 +422,26 @@
           </incDir>
         </cTool>
       </item>
+      <item path="Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c"
+            ex="false"
+            tool="0"
+            flavor2="3">
+        <cTool flags="0">
+          <incDir>
+            <pElem>Drivers/STM32L1xx_HAL_Driver/Src</pElem>
+            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/machine</pElem>
+            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/sys</pElem>
+            <pElem>Drivers/CMSIS/Device/ST/STM32L1xx/Include</pElem>
+            <pElem>Drivers/STM32L1xx_HAL_Driver/Inc</pElem>
+            <pElem>Drivers/CMSIS/Include</pElem>
+            <pElem>Inc</pElem>
+            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/lib/gcc/arm-none-eabi/5.2.1/include</pElem>
+            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include</pElem>
+            <pElem>Drivers/STM32L1xx_HAL_Driver/Inc/Legacy</pElem>
+            <pElem>Debug</pElem>
+          </incDir>
+        </cTool>
+      </item>
       <item path="Src/app1.cpp" ex="false" tool="1" flavor2="0">
         <ccTool flags="1">
         </ccTool>
@@ -428,9 +449,6 @@
       <item path="Src/discover_functions.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>Src</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/machine</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/sys</pElem>
             <pElem>Drivers/CMSIS/Include</pElem>
             <pElem>Inc</pElem>
             <pElem>Drivers/CMSIS/Device/ST/STM32L1xx/Include</pElem>
@@ -445,9 +463,6 @@
       <item path="Src/main.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>Src</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/machine</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/sys</pElem>
             <pElem>Drivers/CMSIS/Device/ST/STM32L1xx/Include</pElem>
             <pElem>Drivers/STM32L1xx_HAL_Driver/Inc</pElem>
             <pElem>Drivers/CMSIS/Include</pElem>
@@ -462,9 +477,6 @@
       <item path="Src/stm32l1xx_hal_msp.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>Src</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/machine</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/sys</pElem>
             <pElem>Drivers/CMSIS/Device/ST/STM32L1xx/Include</pElem>
             <pElem>Drivers/STM32L1xx_HAL_Driver/Inc</pElem>
             <pElem>Drivers/CMSIS/Include</pElem>
@@ -479,9 +491,6 @@
       <item path="Src/stm32l1xx_it.c" ex="false" tool="0" flavor2="3">
         <cTool flags="0">
           <incDir>
-            <pElem>Src</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/machine</pElem>
-            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/sys</pElem>
             <pElem>Drivers/STM32L1xx_HAL_Driver/Inc</pElem>
             <pElem>Drivers/CMSIS/Include</pElem>
             <pElem>Inc</pElem>
@@ -787,6 +796,13 @@
         </cTool>
       </folder>
       <folder path="0/Src">
+        <cTool>
+          <incDir>
+            <pElem>Src</pElem>
+            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/machine</pElem>
+            <pElem>../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.7.0.201602291252/tools/compiler/arm-none-eabi/include/sys</pElem>
+          </incDir>
+        </cTool>
         <ccTool>
           <incDir>
             <pElem>Src</pElem>
