@@ -37,7 +37,7 @@
 #define GPIO_TOGGLE(a,b) 	a->ODR ^= b 
 
 #define USERBUTTON_GPIO_PORT	GPIOA
-#define USERBUTTON_GPIO_PIN     GPIO_Pin_0
+#define USERBUTTON_GPIO_PIN     GPIO_PIN_0
 #define USERBUTTON_GPIO_CLK     RCC_AHBPeriph_GPIOA
 
 #define LD_GPIO_PORT 		GPIOB

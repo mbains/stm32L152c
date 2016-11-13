@@ -39,6 +39,7 @@
       </df>
       <df name="Src">
         <in>app1.c</in>
+        <in>discover_functions.c</in>
         <in>main.c</in>
         <in>stm32l1xx_hal_msp.c</in>
         <in>stm32l1xx_it.c</in>
@@ -661,6 +662,8 @@
           </preprocessorList>
         </cTool>
       </item>
+      <item path="Src/discover_functions.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="Src/main.c" ex="false" tool="0" flavor2="2">
         <cTool flags="0">
           <incDir>
@@ -710,12 +713,29 @@
         </cTool>
       </item>
       <item path="Src/stm32l_discovery_lcd.c" ex="false" tool="0" flavor2="2">
-        <cTool>
-          <preprocessorList>
-            <Elem>STM32L152xC=1</Elem>
-          </preprocessorList>
+        <cTool flags="0">
+          <incDir>
+            <pElem>../../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.3.0.201507241112/tools/compiler/arm-none-eabi/include/machine</pElem>
+            <pElem>../../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.3.0.201507241112/tools/compiler/arm-none-eabi/include</pElem>
+            <pElem>Drivers/CMSIS/Device/ST/STM32L1xx/Include</pElem>
+            <pElem>Drivers/STM32L1xx_HAL_Driver/Inc</pElem>
+            <pElem>Drivers/CMSIS/Include</pElem>
+            <pElem>Inc</pElem>
+            <pElem>../../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.3.0.201507241112/tools/compiler/lib/gcc/arm-none-eabi/4.9.3/include</pElem>
+            <pElem>../../../Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.3.0.201507241112/tools/compiler/arm-none-eabi/include/sys</pElem>
+            <pElem>Drivers/STM32L1xx_HAL_Driver/Inc/Legacy</pElem>
+            <pElem>Debug</pElem>
+          </incDir>
         </cTool>
       </item>
+      <folder path="0/Drivers">
+        <cTool>
+          <preprocessorList>
+            <Elem>HAL_LCD_MODULE_ENABLED</Elem>
+            <Elem>STM32L152xC</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
       <folder path="0/Drivers/CMSIS">
         <cTool>
           <incDir>

@@ -113,12 +113,12 @@ MSB   { 1 , 1 , 0 , 0   }
 
 void LCD_bar(void);
 void LCD_GLASS_Init(void);
-void LCD_GLASS_WriteChar(uint8_t* ch, bool point, bool column,uint8_t position);
-void LCD_GLASS_DisplayString(uint8_t* ptr);
-void LCD_GLASS_DisplayStrDeci(uint16_t* ptr);
-void LCD_GLASS_ClearChar(uint8_t position);
-void LCD_GLASS_Clear(void);
-void LCD_GLASS_ScrollSentence(uint8_t* ptr, uint16_t nScroll, uint16_t ScrollSpeed);
+void LCD_GLASS_WriteChar(LCD_HandleTypeDef * handle, uint8_t* ch, bool point, bool column,uint8_t position);
+void LCD_GLASS_DisplayString(LCD_HandleTypeDef * handle, uint8_t* ptr);
+void LCD_GLASS_DisplayStrDeci(LCD_HandleTypeDef * handle,uint16_t* ptr);
+void LCD_GLASS_ClearChar(LCD_HandleTypeDef * handle, uint8_t position);
+void LCD_GLASS_Clear(LCD_HandleTypeDef * handle);
+void LCD_GLASS_ScrollSentence(LCD_HandleTypeDef * handle, uint8_t* ptr, uint16_t nScroll, uint16_t ScrollSpeed);
 void LCD_GLASS_WriteTime(char a, uint8_t posi, bool column);
 void LCD_GLASS_Configure_GPIO(void);
 
