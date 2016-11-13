@@ -39,7 +39,6 @@
         <in>Foo.cpp</in>
       </df>
       <df name="Src">
-        <in>app1.c</in>
         <in>app1.cpp</in>
         <in>discover_functions.c</in>
         <in>main.c</in>
@@ -421,8 +420,6 @@
             <pElem>Debug</pElem>
           </incDir>
         </cTool>
-      </item>
-      <item path="Src/app1.c" ex="false" tool="0" flavor2="2">
       </item>
       <item path="Src/app1.cpp" ex="false" tool="1" flavor2="0">
         <ccTool flags="1">
