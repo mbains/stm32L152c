@@ -119,8 +119,7 @@ int main(void)
   static uint32_t percent_value = 0;
   while (1)
   {
-    app1_main();
-    HAL_UART_Transmit(&huart1, "main\r\n", 6, 100);
+    app1_main(&huart1);
   
     uint16_t Message[6];  
     Message[0] = ' ';

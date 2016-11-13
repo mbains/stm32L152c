@@ -10,7 +10,8 @@
 #ifdef __cplusplus
 extern "C" {  
 #endif  
-    int app1_main();
+    #include <stm32l1xx_hal.h>
+    int app1_main(UART_HandleTypeDef * huart1);
 #ifdef __cplusplus  
 } // extern "C"  
 #endif

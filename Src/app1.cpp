@@ -34,11 +34,10 @@ private:
 };
 
 static BlinkTest_c b_test(LD3_GPIO_Port, LD3_Pin);
-UART_HandleTypeDef * huart1;
+//UART_HandleTypeDef * huart1;
 
-int app1_main() {
+int app1_main(UART_HandleTypeDef * huart1) {
     
-    huart1->Instance = USART1;
     const char * test = "test\r\n";
     b_test.toggle();
     HAL_Delay(500);
