@@ -98,6 +98,11 @@
         <ccTool flags="1">
         </ccTool>
       </item>
+      <item path="Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c"
             ex="false"
             tool="0"
@@ -277,6 +282,11 @@
             <pElem>Debug</pElem>
           </incDir>
         </cTool>
+      </item>
+      <item path="Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
       </item>
       <item path="Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c"
             ex="false"
