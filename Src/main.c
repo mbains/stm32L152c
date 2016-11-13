@@ -35,14 +35,13 @@
 
 /* USER CODE BEGIN Includes */
 #include <app1.h>
-#include "stm32l_discovery_lcd.h"
 #include "discover_functions.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc;
 
-LCD_HandleTypeDef hlcd;
+UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
@@ -54,8 +53,8 @@ void SystemClock_Config(void);
 void Error_Handler(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC_Init(void);
-static void MX_LCD_Init(void);
 static void MX_TS_Init(void);
+static void MX_USART1_UART_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
@@ -108,8 +107,8 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC_Init();
-  //MX_LCD_Init();
   MX_TS_Init();
+  MX_USART1_UART_Init();
 
   /* USER CODE BEGIN 2 */
 
@@ -117,30 +116,27 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_ALLSEG_ALLCOM,LCD_BLINKFREQUENCY_DIV512);
-//  LCD_GLASS_DisplayString(&hlcd, "88888");
-  __HAL_LCD_BLINK_CONFIG(&hlcd, LCD_BLINKMODE_OFF, LCD_BLINKFREQUENCY_DIV32);
   static uint32_t percent_value = 0;
   while (1)
   {
-      app1_main();
+    app1_main(&huart1);
   
-  uint16_t Message[6];  
-  Message[0] = ' ';
-  Message[1] = ' ';
-  Message[2] = ' ';
+    uint16_t Message[6];  
+    Message[0] = ' ';
+    Message[1] = ' ';
+    Message[2] = ' ';
 
-  /* get Slider position and convert it in percent*/
-  percent_value++;
-  /*Convert percent value in char and store it in message*/    
-  //convert_into_char(percent_value, Message);
-  /*Add "%" in message*/ 
-//  Message[3] = '�' ;
-//  Message[4] = '/' ;
-//  Message[5] = '%' ;
-  /*Display message*/
-  //LCD_GLASS_DisplayStrDeci(&hlcd, Message);  
-	  
+    /* get Slider position and convert it in percent*/
+    percent_value++;
+    /*Convert percent value in char and store it in message*/    
+    //convert_into_char(percent_value, Message);
+    /*Add "%" in message*/ 
+    //  Message[3] = '�' ;
+    //  Message[4] = '/' ;
+    //  Message[5] = '%' ;
+    /*Display message*/
+    //LCD_GLASS_DisplayStrDeci(&hlcd, Message);  
+
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -157,14 +153,12 @@ void SystemClock_Config(void)
 
   RCC_OscInitTypeDef RCC_OscInitStruct;
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
-  RCC_PeriphCLKInitTypeDef PeriphClkInit;
 
   __HAL_RCC_PWR_CLK_ENABLE();
 
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
 
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSE;
-  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = 16;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
@@ -183,13 +177,6 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_LCD;
-  PeriphClkInit.LCDClockSelection = RCC_RTCCLKSOURCE_LSE;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }
@@ -242,32 +229,28 @@ static void MX_ADC_Init(void)
 
 }
 
-/* LCD init function */
-static void MX_LCD_Init(void)
-{
-
-  hlcd.Instance = LCD;
-  hlcd.Init.Prescaler = LCD_PRESCALER_1;
-  hlcd.Init.Divider = LCD_DIVIDER_16;
-  hlcd.Init.Duty = LCD_DUTY_1_4;
-  hlcd.Init.Bias = LCD_BIAS_1_4;
-  hlcd.Init.VoltageSource = LCD_VOLTAGESOURCE_INTERNAL;
-  hlcd.Init.Contrast = LCD_CONTRASTLEVEL_0;
-  hlcd.Init.DeadTime = LCD_DEADTIME_0;
-  hlcd.Init.PulseOnDuration = LCD_PULSEONDURATION_0;
-  hlcd.Init.MuxSegment = LCD_MUXSEGMENT_DISABLE;
-  hlcd.Init.BlinkMode = LCD_BLINKMODE_OFF;
-  hlcd.Init.BlinkFrequency = LCD_BLINKFREQUENCY_DIV8;
-  if (HAL_LCD_Init(&hlcd) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-}
-
 /* TS init function */
 static void MX_TS_Init(void)
 {
+
+}
+
+/* USART1 init function */
+static void MX_USART1_UART_Init(void)
+{
+
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 9600;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
 
 }
 
