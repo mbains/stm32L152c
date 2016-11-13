@@ -108,7 +108,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC_Init();
-  MX_LCD_Init();
+  //MX_LCD_Init();
   MX_TS_Init();
 
   /* USER CODE BEGIN 2 */
@@ -123,10 +123,7 @@ int main(void)
   static uint32_t percent_value = 0;
   while (1)
   {
-  HAL_Delay(20);
-  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
-  HAL_Delay(20);
-  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 1);
+      app1_main();
   
   uint16_t Message[6];  
   Message[0] = ' ';
@@ -136,13 +133,13 @@ int main(void)
   /* get Slider position and convert it in percent*/
   percent_value++;
   /*Convert percent value in char and store it in message*/    
-  convert_into_char(percent_value, Message);
+  //convert_into_char(percent_value, Message);
   /*Add "%" in message*/ 
 //  Message[3] = '�' ;
 //  Message[4] = '/' ;
 //  Message[5] = '%' ;
   /*Display message*/
-  LCD_GLASS_DisplayStrDeci(&hlcd, Message);  
+  //LCD_GLASS_DisplayStrDeci(&hlcd, Message);  
 	  
   /* USER CODE END WHILE */
 
