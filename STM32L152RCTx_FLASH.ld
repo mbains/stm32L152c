@@ -174,6 +174,7 @@ SECTIONS
 
   PROVIDE (_stackend = ORIGIN(RAM) + LENGTH(RAM) - _Min_Stack_Size);
   
+
   /* Remove information from the standard libraries */
   /DISCARD/ :
   {
