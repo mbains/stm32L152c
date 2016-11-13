@@ -41,7 +41,7 @@ int app1_main() {
     HAL_Delay(500);
     b_test.toggle();
     HAL_Delay(500);
-	return 0;
+    return 0;
 }
 
 
