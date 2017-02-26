@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="97">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
       <df name="Drivers">
@@ -97,11 +97,6 @@
       <item path="Drivers/Foo.cpp" ex="false" tool="1" flavor2="0">
         <ccTool flags="1">
         </ccTool>
-      </item>
-      <item path="Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
       <item path="Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c"
             ex="false"
@@ -282,11 +277,6 @@
             <pElem>Debug</pElem>
           </incDir>
         </cTool>
-      </item>
-      <item path="Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
       </item>
       <item path="Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c"
             ex="false"
